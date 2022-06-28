@@ -1,0 +1,13 @@
+name: crox
+version: 0.1.0
+
+authors:
+  - NucciTheBoss <nucci.programming@gmail.com>
+
+targets:
+  crox:
+    main: src/crox.cr
+
+crystal: 1.4.1
+
+license: MIT
