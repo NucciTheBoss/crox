@@ -18,13 +18,26 @@ class Crox
   def Crox.main
     if ARGV.size > 1
       STDERR.puts("USAGE: crox [script]")
+
     elsif ARGV.size == 1
       puts(ARGV[0])
+
     else
-      # TODO: Define REPL code
-      puts "# TODO"
+      Crox.repl
     end
-  end    
+  end
+  
+  def Crox.repl
+    puts("Crox #{VERSION} (dev, June 30 2022, 22:03:14) [Crystal 1.4.1] on Linux")
+    while true
+      print(">>> ")
+      line = gets
+      if line.nil?
+        break
+      end
+      puts line
+    end
+  end
 end
 
 Crox.main
