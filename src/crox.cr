@@ -1,4 +1,5 @@
 # -*- Mode:Crystal; indent-tabs-mode:nil; tab-width:2 -*-
+#
 # Copyright 2022 Jason C. Nucciarone
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

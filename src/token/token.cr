@@ -14,59 +14,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Enumeration to classify Crox tokens.
-#
-# ```
-# TokenType::LEFT_PAREN => (
-# TokenType::BANG => !
-# ```
-enum TokenType
-  # Single-character tokens
-  LEFT_PAREN
-  RIGHT_PAREN
-  LEFT_BRACE
-  RIGHT_BRACE
-  COMMA
-  DOT
-  MINUS
-  PLUS
-  SEMICOLON
-  SLASH
-  STAR
+require "./tokentype"
 
-  # One or two character tokens
-  BANG
-  BANG_EQUAL
-  EQUAL
-  EQUAL_EQUAL
-  GREATER
-  GREATER_EQUAL
-  LESS
-  LESS_EQUAL
+class Token
+  def initialize(type : TokenType, lexeme : String, literal, line : Int32)
+    @type = type
+    @lexeme = lexeme
+    @literal = literal
+    @line = line
+  end
 
-  # Literals
-  IDENTIFIER
-  STRING
-  NUMBER
-
-  # Keywords
-  AND
-  CLASS
-  ELSE
-  FALSE
-  FUN
-  FOR
-  IF
-  NIL
-  OR
-  PRINT
-  RETURN
-  SELF
-  SUPER
-  TRUE
-  VAR
-  WHILE
-
-  # End-of-file
-  EOF
+  def to_string
+    return "#{@type} #{@lexeme} #{@literal}"
+  end
 end
